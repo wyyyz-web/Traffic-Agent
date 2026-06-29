@@ -36,13 +36,19 @@ graph TD
 
 ---
 
-##  AI 智能决策 (AI-Driven Insights)
+##  AI-Driven Insights
 
-本项目不仅实现了底层视觉数据的结构化，还进一步集成了大语言模型（LLM），构建了从数据感知到智能决策的完整闭环。系统可自动分析时空数据库中的车辆记录，并生成符合工程规范的全英文交通监控日报，有效降低人工复核成本。
+Beyond vehicle detection and data persistence, Traffic-Agent incorporates a Large Language Model (LLM) to transform structured traffic records into actionable intelligence.
 
-![AI Report](images/ai_report.png)
+By analyzing vehicle trajectories, traffic density, and temporal patterns stored in the SQLite database, the system can automatically generate professional daily monitoring reports, enabling efficient traffic management and reducing manual analysis workload.
 
-*Figure 3. LLM-generated daily traffic monitoring report for actionable insights.*
+<p align="center">
+  <img src="images/ai_report.png" width="900">
+</p>
+
+<p align="center">
+<b>Figure 3.</b> LLM-generated daily traffic monitoring report based on structured vehicle records.
+</p>
 
 
 ##  性能验证 (Performance & Results)
