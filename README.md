@@ -12,7 +12,7 @@ Traffic-Agent 是一个面向智慧交通场景的智能交通监控与数据分
 
 ```mermaid
 graph TD
-    A[原始交通图像] --> B[YOLOv8 车辆检测]
+    A[原始交通图像] --> B[YOLOv26 车辆检测]
     B --> C[车牌区域切割]
     C --> D[PaddleOCR 字符识别]
     D --> E[JSON 数据序列化]
@@ -29,7 +29,7 @@ graph TD
 
 **技术栈：**
 
-* YOLOv8
+* YOLOv26
 * PaddleOCR
 * OpenCV
 
@@ -37,7 +37,7 @@ graph TD
 
 现实交通场景中的摄像头产生的是非结构化图像数据。
 
-系统利用 YOLOv8 实现车辆目标检测，并通过 PaddleOCR 提取车牌字符信息，将视觉信息转化为机器可理解的数据。
+系统利用 YOLOv26 实现车辆目标检测，并通过 PaddleOCR 提取车牌字符信息，将视觉信息转化为机器可理解的数据。
 
 **能力特点：**
 
@@ -98,7 +98,7 @@ graph TD
 
 ### 高精度视觉感知
 
-基于 YOLOv8 与 PaddleOCR 的协同推理框架，实现复杂交通环境下的稳定识别。
+基于 YOLOv26 与 PaddleOCR 的协同推理框架，实现复杂交通环境下的稳定识别。
 
 ### 自动化数据管道
 
