@@ -8,7 +8,7 @@ Traffic-Agent 是一个面向智慧交通场景的智能交通监控与数据分
 
 ---
 
-## 🚀 系统架构（System Architecture）
+##  系统架构（System Architecture）
 
 ```mermaid
 graph TD
@@ -23,9 +23,9 @@ graph TD
 
 ---
 
-## 🏗 系统组成（System Components）
+##  系统组成（System Components）
 
-### 1️⃣ 视觉感知层（The Eyes）
+### 1️ 视觉感知层（The Eyes）
 
 **技术栈：**
 
@@ -48,7 +48,7 @@ graph TD
 
 ---
 
-### 2️⃣ 数据工程层（The Memory）
+### 2️ 数据工程层（The Memory）
 
 **技术栈：**
 
@@ -71,7 +71,7 @@ graph TD
 
 ---
 
-### 3️⃣ 智能决策层（The Brain）
+### 3️ 智能决策层（The Brain）
 
 **技术栈：**
 
@@ -94,7 +94,7 @@ graph TD
 
 ---
 
-## 🛠 核心功能（Key Features）
+##  核心功能（Key Features）
 
 ### 高精度视觉感知
 
@@ -123,7 +123,7 @@ graph TD
 
 ---
 
-## 📊 性能验证（Performance & Results）
+##  性能验证（Performance & Results）
 
 ### 推理效果演示
 
@@ -165,7 +165,7 @@ LIMIT 3;
 
 ---
 
-## ⚙️ 快速上手（Quick Start）
+##  快速上手（Quick Start）
 
 ### 1. 安装依赖
 
@@ -200,28 +200,30 @@ LIMIT 5;
 
 ---
 
-## 📁 项目结构（Project Structure）
+
+##  项目结构 (Project Structure)
 
 ```text
 Traffic-Agent/
+├── images/                      # 存放 README 相关的演示与结果截图
+│   ├── detection_result.png     # 视觉感知推理结果演示
+│   ├── database_preview.png     # SQLite 数据库持久化记录预览
+│   └── ai_report.png            # LLM 智能分析生成的交通日报演示
 │
-├── images/
-│   ├── detection_result.png
-│   ├── ai_report.png
+├── src/                         # 源代码目录 (用于后续模块解耦与重构)
+├── database/                    # 数据库配置与迁移脚本目录
 │
-├── src/
-├── database/
+├── main_inference.py            # 核心模块 1 & 2：YOLOv8 视觉推理与自动入库 (Eyes & Memory)
+├── report_generator.py          # 核心模块 3：调用 LLM 引擎生成智能决策报告 (Brain)
+├── traffic_agent.db             # 结构化时空数据库文件 (系统运行时自动生成)
 │
-├── main_inference.py
-├── requirements.txt
-├── README.md
-│
-└── traffic_agent.db
+├── requirements.txt             # 项目环境依赖清单 (pip freeze)
+└── README.md                    # 项目核心说明文档
 ```
 
 ---
 
-## 🔮 未来工作（Future Work）
+##  未来工作（Future Work）
 
 * 实时视频流监控
 * 多摄像头协同分析
@@ -232,6 +234,6 @@ Traffic-Agent/
 
 ---
 
-## 📝 License
+##  License
 
 本项目仅用于学术研究与教学目的。
