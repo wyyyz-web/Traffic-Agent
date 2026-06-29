@@ -51,9 +51,19 @@ README/images/detection_result.png
 
 ### 数据库持久化预览
 
-![Database Preview](images/database_preview.png)
+```sql
+sqlite> SELECT id,event_id,license_plate,confidence,bbox
+FROM vehicle_records
+LIMIT 3;
+```
 
-*Figure 2. Structured Vehicle Records Stored in SQLite Database*
+| id | event_id | license_plate | confidence | bbox |
+|----|-----------|---------------|------------|------|
+| 1 | CAM_N_001_1782705240 | SU-A88888 | 0.99 | [10,20,100,50] |
+| 2 | CAM_N_001_1782705351 | SU-A88888 | 0.99 | [10,20,100,50] |
+| 3 | CAM_N_001_1782705351 | SU-B12345 | 0.95 | [15,25,110,55] |
+
+*Figure 2. Example records persisted in the SQLite database.*
 
 ```text
 README/images/database_preview.png
