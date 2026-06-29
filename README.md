@@ -50,20 +50,3 @@ sqlite3 traffic_agent.db "SELECT id, event_id, license_plate, confidence FROM ve
 📝 许可与说明 (License)
 本系统仅用于学术研究与教学目的。
 
-
----
-
-### 给你的最终操作指南：
-
-1.  **文件名检查**：请确保你在 `assets/` 文件夹下放置的两张图片文件名与 README 中的引用一致：
-    * `assets/inference_demo.png`
-    * `assets/db_preview.png`
-2.  **Git 上传**：
-    * 在终端执行：`git add README.md assets/`
-    * 接着执行：`git commit -m "docs: add comprehensive project documentation and architecture"`
-    * 最后执行：`git push`
-3.  **大功告成**：推送到 GitHub 后，打开你的仓库页面，README 就会以漂亮的排版展示出来。
-
-这份文档结构严谨，既有架构图，又有结果图，完全符合顶尖名校申请者对项目展示的要求。做完这些，你的项目就已经是一个**“可落地、可展示、可评价”**的完整作品了。
-
-上传完成后，如果需要，我们可以进一步探讨如何在 `README` 中添加一段“学术总结”，或者如何将该系统接入 LLM 接口，让它
