@@ -2,7 +2,7 @@
 
 Traffic-Agent 是一个面向智能交通管理的高性能端到端车牌识别（ALPR）系统。本项目集成了先进的计算机视觉感知模型与结构化时空数据库，旨在实现实时车辆检测、车牌提取及自动数据归档。
 
-## 🚀 系统架构 (System Architecture)
+##  系统架构 (System Architecture)
 
 本系统采用模块化设计，通过解耦感知层、数据处理层和持久化层，确保了系统的高扩展性与稳定性：
 
@@ -36,7 +36,7 @@ graph TD
 
 ---
 
-## 📊 性能验证 (Performance & Results)
+##  性能验证 (Performance & Results)
 
 ### 推理效果演示
 
@@ -72,7 +72,7 @@ README/images/database_preview.png
 
 ---
 
-## ⚙️ 快速上手 (Quick Start)
+##  快速上手 (Quick Start)
 
 ### 1. 环境依赖
 
@@ -100,6 +100,6 @@ sqlite3 traffic_agent.db "SELECT id, event_id, license_plate, confidence FROM ve
 
 ---
 
-## 📝 许可与说明 (License)
+##  许可与说明 (License)
 
 本系统仅用于学术研究与教学目的。
