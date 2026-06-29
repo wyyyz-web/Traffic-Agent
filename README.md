@@ -14,39 +14,80 @@ graph TD
     D --> E[JSON 数据序列化]
     E --> F[(SQLite 时空数据库)]
     F --> G[数据分析/LLM 接口]
+```
 
-🛠 核心功能 (Key Features)
-高精度视觉感知: 基于 YOLOv8 深度优化模型，在复杂光照和遮挡环境下实现实时车牌定位。
+## 🛠 核心功能 (Key Features)
 
-鲁棒字符识别: 集成 PaddleOCR 引擎，具备处理多样化车牌格式的高效字符提取能力。
+### 高精度视觉感知
 
-结构化数据持久化: 自动化 SQLite 数据流管线，将视觉识别结果映射为结构化 JSON，支持高效的时空查询。
+基于 YOLOv8 深度优化模型，在复杂光照和遮挡环境下实现实时车牌定位。
 
-工业级鲁棒性: 内置错误处理机制，有效应对边界场景，确保端到端流程的高可用性。
+### 鲁棒字符识别
 
-📊 性能验证 (Performance & Results)
-推理效果演示
-图 1: 实时视觉检测与 OCR 字符提取结果展示
+集成 PaddleOCR 引擎，具备处理多样化车牌格式的高效字符提取能力。
 
-数据库持久化预览
-图 2: SQLite 引擎中存储的结构化车辆记录示例
+### 结构化数据持久化
 
-⚙️ 快速上手 (Quick Start)
-1. 环境依赖
+自动化 SQLite 数据流管线，将视觉识别结果映射为结构化 JSON，支持高效的时空查询。
+
+### 工业级鲁棒性
+
+内置错误处理机制，有效应对边界场景，确保端到端流程的高可用性。
+
+---
+
+## 📊 性能验证 (Performance & Results)
+
+### 推理效果演示
+
+> 图 1：实时视觉检测与 OCR 字符提取结果展示
+
+```text
+README/images/detection_result.png
+```
+
+（在此处插入检测结果截图）
+
+### 数据库持久化预览
+
+> 图 2：SQLite 引擎中存储的结构化车辆记录示例
+
+```text
+README/images/database_preview.png
+```
+
+（在此处插入数据库截图）
+
+---
+
+## ⚙️ 快速上手 (Quick Start)
+
+### 1. 环境依赖
+
 确保已配置好 PyTorch 及 PaddlePaddle 运行环境：
 
-Bash
+```bash
 pip install -r requirements.txt
-2. 运行推理
+```
+
+### 2. 运行推理
+
 启动全流程数据管道，处理本地图像并自动入库：
 
-Bash
+```bash
 python main_inference.py
-3. 数据查询
+```
+
+### 3. 数据查询
+
 验证数据库中已存储的车辆记录：
 
-Bash
+```bash
 sqlite3 traffic_agent.db "SELECT id, event_id, license_plate, confidence FROM vehicle_records LIMIT 5;"
-📝 许可与说明 (License)
-本系统仅用于学术研究与教学目的。
+```
 
+---
+
+## 📝 许可与说明 (License)
+
+本系统仅用于学术研究与教学目的。
