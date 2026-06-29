@@ -40,7 +40,9 @@ graph TD
 
 ### 推理效果演示
 
-> 图 1：实时视觉检测与 OCR 字符提取结果展示
+![Detection Result](images/detection_result.png)
+
+*Figure 1. Real-time Vehicle Detection and OCR Recognition Results*
 
 ```text
 README/images/detection_result.png
@@ -50,7 +52,9 @@ README/images/detection_result.png
 
 ### 数据库持久化预览
 
-> 图 2：SQLite 引擎中存储的结构化车辆记录示例
+![Database Preview](images/database_preview.png)
+
+*Figure 2. Structured Vehicle Records Stored in SQLite Database*
 
 ```text
 README/images/database_preview.png
