@@ -213,7 +213,7 @@ Traffic-Agent/
 ├── src/                         # 源代码目录 (用于后续模块解耦与重构)
 ├── database/                    # 数据库配置与迁移脚本目录
 │
-├── main_inference.py            # 核心模块 1 & 2：YOLOv8 视觉推理与自动入库 (Eyes & Memory)
+├── main_inference.py            # 核心模块 1 & 2：YOLOv26 视觉推理与自动入库 (Eyes & Memory)
 ├── report_generator.py          # 核心模块 3：调用 LLM 引擎生成智能决策报告 (Brain)
 ├── traffic_agent.db             # 结构化时空数据库文件 (系统运行时自动生成)
 │
