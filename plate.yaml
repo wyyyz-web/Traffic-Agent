@@ -1,0 +1,5 @@
+path: /wangyuanzhu/my_car_plate_project/datasets
+train: images/train
+val: images/train
+names:
+  0: plate
