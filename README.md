@@ -16,7 +16,7 @@ graph TD
     F --> G[数据分析/LLM 接口]
 ```
 
-## 🛠 核心功能 (Key Features)
+##  核心功能 (Key Features)
 
 ### 高精度视觉感知
 
@@ -35,6 +35,15 @@ graph TD
 内置错误处理机制，有效应对边界场景，确保端到端流程的高可用性。
 
 ---
+
+##  AI 智能决策 (AI-Driven Insights)
+
+本项目不仅实现了底层视觉数据的结构化，还进一步集成了大语言模型（LLM），构建了从数据感知到智能决策的完整闭环。系统可自动分析时空数据库中的车辆记录，并生成符合工程规范的全英文交通监控日报，有效降低人工复核成本。
+
+![AI Report](images/ai_report.png)
+
+*Figure 3. LLM-generated daily traffic monitoring report for actionable insights.*
+
 
 ##  性能验证 (Performance & Results)
 
