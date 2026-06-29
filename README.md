@@ -48,7 +48,6 @@ graph TD
 README/images/detection_result.png
 ```
 
-（在此处插入检测结果截图）
 
 ### 数据库持久化预览
 
@@ -60,7 +59,6 @@ README/images/detection_result.png
 README/images/database_preview.png
 ```
 
-（在此处插入数据库截图）
 
 ---
 
