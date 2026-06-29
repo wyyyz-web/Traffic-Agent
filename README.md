@@ -1,69 +1,137 @@
 # Traffic-Agent: Intelligent Traffic Monitoring & Data Analysis System
 
-Traffic-Agent 是一个面向智能交通管理的高性能端到端车牌识别（ALPR）系统。本项目集成了先进的计算机视觉感知模型与结构化时空数据库，旨在实现实时车辆检测、车牌提取及自动数据归档。
+Traffic-Agent 是一个面向智慧交通场景的智能交通监控与数据分析系统（Traffic Intelligence Agent）。
 
-##  系统架构 (System Architecture)
+项目融合了计算机视觉（Computer Vision）、数据工程（Data Engineering）与大语言模型（LLM Agent）技术，实现从交通图像感知、车辆信息提取、结构化数据存储到智能分析决策的完整闭环。
 
-本系统采用模块化设计，通过解耦感知层、数据处理层和持久化层，确保了系统的高扩展性与稳定性：
-
-```mermaid
-graph TD
-    A[原始交通图像] --> B[YOLOv8 检测]
-    B --> C[车牌切割]
-    C --> D[PaddleOCR 字符识别]
-    D --> E[JSON 数据序列化]
-    E --> F[(SQLite 时空数据库)]
-    F --> G[数据分析/LLM 接口]
-```
-
-##  核心功能 (Key Features)
-
-### 高精度视觉感知
-
-基于 YOLOv8 深度优化模型，在复杂光照和遮挡环境下实现实时车牌定位。
-
-### 鲁棒字符识别
-
-集成 PaddleOCR 引擎，具备处理多样化车牌格式的高效字符提取能力。
-
-### 结构化数据持久化
-
-自动化 SQLite 数据流管线，将视觉识别结果映射为结构化 JSON，支持高效的时空查询。
-
-### 工业级鲁棒性
-
-内置错误处理机制，有效应对边界场景，确保端到端流程的高可用性。
+系统能够自动识别车辆与车牌信息，将实时交通数据转化为可查询的时空记录，并进一步利用大语言模型生成交通监控分析报告，为智慧城市治理和交通管理提供数据支撑。
 
 ---
 
-##  AI 智能决策（AI-Driven Insights）
+## 🚀 系统架构（System Architecture）
 
-本项目不仅实现了交通视觉数据的自动感知与结构化存储，还进一步集成了大语言模型（LLM），构建了从数据采集、信息提取到智能分析的完整闭环。
+```mermaid
+graph TD
+    A[原始交通图像] --> B[YOLOv8 车辆检测]
+    B --> C[车牌区域切割]
+    C --> D[PaddleOCR 字符识别]
+    D --> E[JSON 数据序列化]
+    E --> F[(SQLite 时空数据库)]
+    F --> G[LLM 智能分析]
+    G --> H[交通监控日报]
+```
 
-系统能够自动读取 SQLite 数据库中的车辆记录，对交通流量、车辆分布及异常情况进行分析，并生成符合工程规范的交通监控日报，为交通管理与决策提供辅助支持，有效降低人工统计与复核成本。
+---
 
-<p align="center">
-  <img src="images/ai_report.png" width="900">
-</p>
+## 🏗 系统组成（System Components）
 
-<p align="center">
-<b>图 3.</b> 基于结构化车辆数据自动生成的交通监控分析报告
-</p>
+### 1️⃣ 视觉感知层（The Eyes）
 
+**技术栈：**
 
+* YOLOv8
+* PaddleOCR
+* OpenCV
 
-##  性能验证 (Performance & Results)
+**核心职责：**
+
+现实交通场景中的摄像头产生的是非结构化图像数据。
+
+系统利用 YOLOv8 实现车辆目标检测，并通过 PaddleOCR 提取车牌字符信息，将视觉信息转化为机器可理解的数据。
+
+**能力特点：**
+
+* 实时车辆检测
+* 自动车牌定位
+* OCR字符识别
+* 复杂场景鲁棒处理
+
+---
+
+### 2️⃣ 数据工程层（The Memory）
+
+**技术栈：**
+
+* Python
+* SQLite
+* JSON
+
+**核心职责：**
+
+视觉检测结果本身无法形成长期价值。
+
+系统构建自动化数据管道，将每次识别结果转化为包含时间戳、位置坐标、车牌信息和识别置信度的结构化记录，并持久化存储至数据库。
+
+**能力特点：**
+
+* 数据标准化
+* JSON序列化
+* SQLite持久化
+* 时空数据管理
+
+---
+
+### 3️⃣ 智能决策层（The Brain）
+
+**技术栈：**
+
+* DeepSeek API
+* GPT API
+* Prompt Engineering
+
+**核心职责：**
+
+面对海量交通记录，传统方式需要人工分析。
+
+系统自动读取数据库中的车辆信息，通过大语言模型进行数据分析与总结，并自动生成交通监控日报。
+
+**能力特点：**
+
+* 自动数据分析
+* 流量趋势总结
+* 异常情况识别
+* 自动报告生成
+
+---
+
+## 🛠 核心功能（Key Features）
+
+### 高精度视觉感知
+
+基于 YOLOv8 与 PaddleOCR 的协同推理框架，实现复杂交通环境下的稳定识别。
+
+### 自动化数据管道
+
+构建从图像输入到数据库存储的端到端自动化流程。
+
+### 时空数据管理
+
+支持车辆记录查询、历史追踪与统计分析。
+
+### AI智能分析
+
+利用大语言模型自动生成交通监控分析报告。
+
+### 模块化架构设计
+
+支持后续扩展：
+
+* 多摄像头接入
+* 视频流分析
+* 云数据库部署
+* 多模态交通管理
+
+---
+
+## 📊 性能验证（Performance & Results）
 
 ### 推理效果演示
 
 ![Detection Result](images/detection_result.png)
 
-*Figure 1. Real-time Vehicle Detection and OCR Recognition Results*
+*图 1：车辆检测与车牌识别结果展示*
 
-```text
-README/images/detection_result.png
-```
-
+---
 
 ### 数据库持久化预览
 
@@ -73,49 +141,97 @@ FROM vehicle_records
 LIMIT 3;
 ```
 
-| id | event_id | license_plate | confidence | bbox |
-|----|-----------|---------------|------------|------|
-| 1 | CAM_N_001_1782705240 | SU-A88888 | 0.99 | [10,20,100,50] |
-| 2 | CAM_N_001_1782705351 | SU-A88888 | 0.99 | [10,20,100,50] |
-| 3 | CAM_N_001_1782705351 | SU-B12345 | 0.95 | [15,25,110,55] |
+| id | event_id             | license_plate | confidence | bbox           |
+| -- | -------------------- | ------------- | ---------- | -------------- |
+| 1  | CAM_N_001_1782705240 | SU-A88888     | 0.99       | [10,20,100,50] |
+| 2  | CAM_N_001_1782705351 | SU-A88888     | 0.99       | [10,20,100,50] |
+| 3  | CAM_N_001_1782705351 | SU-B12345     | 0.95       | [15,25,110,55] |
 
-*Figure 2. Example records persisted in the SQLite database.*
-
-```text
-README/images/database_preview.png
-```
-
+*图 2：SQLite 数据库存储的车辆记录示例*
 
 ---
 
-##  快速上手 (Quick Start)
+### AI 智能决策展示
 
-### 1. 环境依赖
+系统基于数据库中的结构化交通记录自动生成交通监控分析报告。
 
-确保已配置好 PyTorch 及 PaddlePaddle 运行环境：
+<p align="center">
+  <img src="images/ai_report.png" width="900">
+</p>
+
+<p align="center">
+<b>图 3.</b> 基于车辆时空数据自动生成的交通监控分析报告
+</p>
+
+---
+
+## ⚙️ 快速上手（Quick Start）
+
+### 1. 安装依赖
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. 运行推理
-
-启动全流程数据管道，处理本地图像并自动入库：
+### 2. 运行系统
 
 ```bash
 python main_inference.py
 ```
 
-### 3. 数据查询
+系统将自动完成：
 
-验证数据库中已存储的车辆记录：
+* 车辆检测
+* OCR识别
+* 数据结构化
+* 数据库存储
+
+### 3. 查询数据库
 
 ```bash
-sqlite3 traffic_agent.db "SELECT id, event_id, license_plate, confidence FROM vehicle_records LIMIT 5;"
+sqlite3 traffic_agent.db
+```
+
+```sql
+SELECT *
+FROM vehicle_records
+LIMIT 5;
 ```
 
 ---
 
-##  许可与说明 (License)
+## 📁 项目结构（Project Structure）
 
-本系统仅用于学术研究与教学目的。
+```text
+Traffic-Agent/
+│
+├── images/
+│   ├── detection_result.png
+│   ├── ai_report.png
+│
+├── src/
+├── database/
+│
+├── main_inference.py
+├── requirements.txt
+├── README.md
+│
+└── traffic_agent.db
+```
+
+---
+
+## 🔮 未来工作（Future Work）
+
+* 实时视频流监控
+* 多摄像头协同分析
+* 云数据库部署
+* 异常事件自动告警
+* Agent自动决策系统
+* RAG交通知识库构建
+
+---
+
+## 📝 License
+
+本项目仅用于学术研究与教学目的。
