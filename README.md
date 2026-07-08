@@ -164,3 +164,75 @@ The system automatically generates traffic monitoring reports based on structure
 </p>
 
 ---
+## Quick Start
+
+### 1. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Run the System
+
+```bash
+python main_inference.py
+```
+
+The system will automatically perform:
+
+* Vehicle detection
+* License plate recognition
+* Data structuring
+* Database storage
+
+### 3. Query the Database
+
+```bash
+sqlite3 traffic_agent.db
+```
+
+```sql
+SELECT *
+FROM vehicle_records
+LIMIT 5;
+```
+
+---
+
+## Project Structure
+
+```text
+Traffic-Agent/
+├── images/                      # Images for README demonstrations and result visualization
+│   ├── detection_result.png     # Visual perception inference result demonstration
+│   ├── database_preview.png     # SQLite database persistence preview
+│   └── ai_report.png            # LLM-generated intelligent analysis report demonstration
+│
+├── src/                         # Source code directory (reserved for future module decoupling and refactoring)
+├── database/                    # Database configuration and migration scripts
+│
+├── main_inference.py            # Core Modules 1 & 2: YOLOv8 visual inference and automated database insertion (Eyes & Memory)
+├── report_generator.py          # Core Module 3: LLM-based intelligent decision report generation (Brain)
+├── traffic_agent.db             # Structured spatio-temporal database (automatically generated during system execution)
+│
+├── requirements.txt             # Project dependency configuration file
+└── README.md                    # Main project documentation
+```
+
+---
+
+## Future Work
+
+* Real-time video stream monitoring
+* Multi-camera collaborative analysis
+* Cloud database deployment
+* Automatic anomaly event alerting
+* Autonomous Agent-based decision-making system
+* RAG-based traffic knowledge base construction
+
+---
+
+## License
+
+This project is intended solely for academic research and educational purposes.
+
